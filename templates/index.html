@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Excel Processor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>SRD Rollover file converter</h1>
+        <p>Upload the Excel file exported from Alma and the feed for SRD will be downloaded!</p>
+        <form action="/process" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".xls, .xlsx">
+            <input type="submit" value="Process">
+        </form>
+        <div id="loading-spinner"></div>
+        <div id="success-tick">&#10004;</div>
+    </div>
+    <div class="footer">
+        <p>© 2023 SRD Data Processer. All rights reserved.</p>
+    </div>
+</body>
+</html>
